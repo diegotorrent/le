@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smarttbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,700" rel="stylesheet">
+    <style type="text/css">
+    
+  body {
+    margin: 0px;       
+    padding: 0px;
+    background-color: rgb(229,229,229);
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .flex-container {
+    
+    box-shadow: 0 0 4px black;
+    display: flex;
+    height:98%;
+    
+    width: 100%;    
+    max-width:1280px;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+.header {
+
+
+    background-color: rgb(229,229,229);
+    display:flex;
+    flex-direction: row;
+    padding:5px;
+    height:50px;
+    width: 100%;    
+
+}
+
+.header > div {
+    
+    margin:5px;
+
+}
+
+.header ul > li{
+
+    display:inline-block;
+    padding:8px;
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+
+    color: #000;
+
+}
+
+.header ul > li.selected{
+    
+    color: #00A59D;
+}
+.header button {
+    padding:6px;
+    border: none;
+    background: #00A59D;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+
+    color: #FFFFFF;
+}
+
+.banner {
+    background-image: url('images/banner-1.png');
+
+    text-align:center;
+    height:310px;
+    width: 100%;    
+    background-color: #666666;
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.banner .btn-chatbot {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: normal;
+    color: #FFFFFF;
+    border:none;
+    padding-top:8px;
+    margin-top:21px;
+    padding-bottom:8px;
+    padding-left:29px;
+    padding-right:27px;
+    background: linear-gradient(180deg, rgba(255, 207, 85, 0.67) 50%, rgba(255, 255, 255, 0) 100%), #FF3D00;
+
+}
+
+.banner p.banner-title {
+    margin-top:67px;
+    margin-left:84px;
+    margin-bottom: 0px;
+    max-width: 655px;
+    text-align: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+
+
+}
+
+
+.banner p.banner-subtitle {
+    margin-top:22px;
+    margin-left:84px;
+    max-width: 277px;
+    text-align: left;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: #FFFFFF;
+
+
+
+}
+.conteudo {
+
+    text-align:center;
+    width: 100%;    
+    margin:0px;
+    padding:6px;
+    background-color: rgb(229,229,229);
+    border:none;
+
+  }
+
+.conteudo .estrategia {
+    margin-left:84px;
+}
+
+.conteudo .filtro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-left:84px;
+    margin-right:84px;
+    padding:16px;
+}
+.conteudo .estrategia p.titulo{
+
+    text-align:left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 44px;
+
+    color: #00A59D;
+
+}
+.rodape {
+   
+    padding:16px;
+    background-color: rgb(229,229,229);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 22px;
+    width: 100%;
+    text-align: center;
+    color: #666666;
+
+  }
+
+  .lista-box {
+
+    display: flex;
+    overflow-x: scroll;
+
+    flex-direction: row;
+
+    margin:0px;
+    padding: 0px;
+
+    max-width:1150px;
+
+
+}
+
+
+
+/*
+ *  STYLE 1
+ */
+
+ .lista-box::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.lista-box::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.lista-box::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.box-white{
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+
+    margin-right:20px;
+
+    background-color: #fff;
+    border: 2px solid #00A59D;
+    color:#929292;
+    min-width:315px;
+    max-width: 315px;
+    min-height: 232px;
+    max-height: 232px;
+    padding-left: 32px; 
+    padding-right: 16px; 
+    padding-bottom: 21px; 
+    border-radius: 9px;    
+    box-shadow: 3px 3px rgba(146,146,146,0.75);
+
+}
+
+.box-white p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: #00A59D;
+    text-align: left;
+}
+.box-white p > span {
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFF500;
+    text-shadow: 1px 1px rgba(146,146,146,0.75);
+    float: right;
+}
+.box-white ul {
+
+    margin:0px;
+    padding: 0px;
+    text-align: left;
+
+}
+.box-white ul > li {
+    margin:0px;
+    padding: 0px;
+    text-align: left;
+    
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #929292;
+}
+.box-white ul > li > span {
+    font-weight: bold;
+}
+
+
+.box-green{
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+
+    margin-right:20px;
+
+    background-color: #00A59D;
+    border: 2px solid #00A59D;
+    color:#FFFFFF;
+    min-width:315px;
+    max-width: 315px;
+    min-height: 232px;
+    max-height: 232px;
+    padding-left: 32px; 
+    padding-right: 16px; 
+    padding-bottom: 21px; 
+    border-radius: 9px;    
+    box-shadow: 3px 3px rgba(146,146,146,0.75);
+
+}
+
+.box-green p {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFF500;
+    text-align: left;
+}
+.box-green p > span {
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFF500;
+    text-shadow: 1px 1px rgba(146,146,146,0.75);
+    float: right;
+}
+.box-green ul {
+
+    margin:0px;
+    padding: 0px;
+    text-align: left;
+
+}
+.box-green ul > li {
+    margin:0px;
+    padding: 0px;
+    text-align: left;
+
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+}
+.box-green ul > li > span {
+    font-weight: bold;
+}
+
+.banner-chatbuzz{
+    
+    margin-left:212px;
+    margin-top:54px;
+
+}
+
+.chatbuzz{
+    
+    display:none;
+    position: fixed;
+	float: bottom;
+	bottom: 0px;
+	left: 0px;
+    z-index: 100;
+    min-height: 684px;
+    max-height: 684px;
+    min-width: 416px;
+    max-width: 416px;
+    background-color: #E5E5E5;
+    color: #A6AAB4;
+    font-family: 'Sarabun', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+
+
+    
+}
+
+.chatbuzz .header {
+
+    margin:0px;
+    padding: 0px;
+
+    min-height: 78px;
+    max-height: 78px;
+    width: 100%;
+    background: linear-gradient(180deg, #42E4DD 0%, rgba(255, 255, 255, 0) 100%), #00A59D;
+
+}
+
+.chatbuzz .header p {
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+
+    margin: 0px;
+    padding: 27px;
+
+    width: 100%;
+    text-align: left;
+
+}
+.chatbuzz .header p > span {
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    float: right;
+
+}
+
+.chatbuzz .messages {
+    overflow-y: auto;
+    min-height:347px;
+    max-height:347px;
+}
+
+.chatbuzz .messages p.autor{
+    font-family: Sarabun;
+    
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #2C2C2C;
+
+}
+.chatbuzz .message {
+
+    display:flex;
+    flex-direction: row;
+    
+
+}
+.chatbuzz .messages p.resposta{
+    border: 2px solid #A6AAB4;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    padding:16px;
+    width:263px;
+    color: #A6AAB4;
+
+}
+.chatbuzz .messages p.pergunta{
+
+    
+    background: #613EEA;
+    /* purple button shadow */
+    box-shadow: 0px 8px 20px rgba(97, 62, 234, 0.32);
+    border-radius: 6px;
+
+    border: 2px solid #A6AAB4;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    padding:16px;
+    margin:0px;
+    margin-right:16px;
+    width:263px;
+    color: #FFFFFF;
+
+}
+
+.chatbuzz .footer {
+
+margin:0px;
+padding: 0px;
+
+min-height: 260px;
+max-height: 260px;
+width: 100%;
+background: linear-gradient(180deg, #42E4DD 0%, rgba(255, 255, 255, 0) 100%), #00A59D;
+
+}
+
+.chatbuzz .footer button {
+
+    height: 56px;
+    margin:21px;
+    margin-top:38px;
+    
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+    /* purple */
+    background: #613EEA;
+    /* purple button shadow */
+    box-shadow: 0px 8px 20px rgba(97, 62, 234, 0.32);
+    border-radius: 6px;
+
+}
+.sombra{
+    position: absolute;
+    top:0px;
+    left:0px;
+    background:rgba(146,146,146,0.75);
+    width: 100%; 
+    height: 100%;
+}
+
+.btn-smartty-addestrategia{
+    width: 162px;
+    height: 56px;
+    background: #FFE34F;
+    box-shadow: 0px 8px 20px rgba(97, 62, 234, 0.32);
+    border-radius: 6px;
+    
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.1px;
+
+    color: #161515;
+
+}
+@media (max-width: 960px) {
+
+    .banner p.banner-title {
+        margin-top:10px;
+        margin-left:10px;
+    }
+    .banner p.banner-subtitle {
+        margin-top:10x;
+        margin-left:10px;
+    }
+    .conteudo .estrategia {
+        margin-left:10px;
+    }
+    
+    .conteudo .filtro {
+     
+        margin-left:0px;
+        margin-right:0px;
+        padding:16px;
+    }
+    
+    .banner-chatbuzz{
+        
+        margin-left:0px;
+        margin-top:0px;
+
+    }
+
+    .banner{
+
+        flex-direction: column;
+        height: 100%;
+
+    }
+
+
+    .banner p.banner-title {
+        
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+
+    .banner p.banner-subtitle {
+        font-size: 14px;
+        line-height: 14px;
+
+    }
+    
+    .header ul > li{
+
+        display:none;
+    }
+
+  }
+  
+  @media (max-width: 600px) {
+
+    .conteudo .estrategia {
+        margin-left:0px;
+    }
+    .conteudo .filtro {
+        margin-left:0px;
+        margin-right:0px;
+        padding:16px;
+    }
+    .banner-chatbuzz{
+        
+        margin-left:0px;
+        margin-top:0px;
+
+    }
+
+    .banner{
+
+        flex-direction: column;
+        height: 100%;
+
+    }
+
+    .banner p.banner-title {
+        
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+
+    .banner p.banner-subtitle {
+        font-size: 12px;
+        line-height: 12px;
+
+    }
+    
+    .header ul > li{
+
+        display:none;
+    }
+  }
+
+
+
+    </style>
+
+
+
+
+<script type="text/javascript">
+
+
+    function closeSmartty(){
+        
+        try{
+
+            var divsombra = document. getElementById("sombra");
+            divsombra.parentNode.removeChild(divsombra);
+            var divsmartty = document. getElementById("smartty");
+            divsmartty.style.display = 'none';
+            document.body.style="overflow:auto";
+
+        }catch(e){
+            alert(e);
+        }
+
+    }
+
+    function smartty(){
+
+        try{
+
+            var divSombra = document.createElement('div');
+            divSombra.id="sombra";
+            divSombra.className = "sombra";
+            document.body.style="overflow:hidden";
+            document.body.appendChild(divSombra);
+
+            document.getElementById('smartty').style.display='block';
+
+        
+        }catch(e){
+            alert(e);
+        }
+    }
+
+    function perguntar(pergunta){
+
+        try{
+            
+            var messages = document.getElementById("chatbuzz-messages");
+
+            var div_message = document.createElement('div');
+            div_message.className='message';
+
+            var div_message_1 = document.createElement('div');
+            div_message_1.style="padding-left:12px";
+
+            var p_pergunta = document.createElement('p');
+            p_pergunta.className='pergunta';
+            p_pergunta.appendChild(document.createTextNode(pergunta));
+            div_message_1.appendChild(p_pergunta);
+
+            var img_autor = document.createElement('img');
+            img_autor.src="images/icon-user-example.png";
+            img_autor.alt="Autor";
+
+            var div_autor = document.createElement('div');
+            div_autor.appendChild(img_autor);
+
+            div_message.appendChild(div_message_1);
+            div_message.appendChild(div_autor);
+
+            messages.appendChild(div_message);
+            
+            messages.scrollTop = messages.scrollHeight;
+
+
+
+            if (pergunta=="Deus me dibre!" || pergunta=="Credo, que delícia!"){
+
+                responder("Me parece que você é um investir mais cauteloso. Quanto você quer investir? ");
+
+                interaction(pergunta);
+
+                
+            }else if (pergunta.indexOf('Eu quero investir')>-1){
+                
+                responder("investir");
+                //Eu quero investir R$ 100
+                //Eu quero investir R$ 500
+                //Eu quero investir R$ 1000
+               
+            }
+
+
+
+        }catch(e){
+            alert(e);
+        }
+
+
+    }
+    function interaction01(div_interaction){
+        try{
+            /*
+            Exibir 3 botoes 
+            R$ 100 , R$ 500 , R$ 1000
+
+            onclick="perguntar(this.value)" value="Credo, que delícia!"
+            */
+
+            var btn100 = document.createElement('button');
+            btn100.innerText = "R$ 100";
+            btn100.style = "margin-left:47px;width:83px";
+            btn100.value = "Eu quero investir R$ 100";
+            btn100.setAttribute("onclick","perguntar(this.value)");
+            var btn500 = document.createElement('button');
+            btn500.innerText = "R$ 500";
+            btn500.style = "width:83px";
+            btn500.value = "Eu quero investir R$ 500";
+            btn500.setAttribute("onclick","perguntar(this.value)");
+            var btn1000 = document.createElement('button');
+            btn1000.innerText = "R$ 1000";
+            btn1000.style = "width:83px";
+            btn1000.value = "Eu quero investir R$ 1000";
+            btn1000.setAttribute("onclick","perguntar(this.value)");
+
+            div_interaction.innerHTML='';
+            div_interaction.appendChild(btn100);
+            div_interaction.appendChild(btn500);
+            div_interaction.appendChild(btn1000);
+            
+        }catch(e){
+            alert(e);
+        }
+    }
+
+    function interaction(tipo){
+        try{
+
+            var div_interaction = document.getElementById('chatbuzz-interaction');
+
+
+            switch(tipo){
+                case "Credo, que delícia!": interaction01(div_interaction);break;
+                case "Deus me dibre!": interaction01(div_interaction);break;
+
+                default:break;
+            }
+
+
+
+        }catch(e){
+            alert(e);
+        }
+
+    }
+
+
+    function addEstrategia(){
+
+        try{
+
+            var smartty = document.getElementById("smartty");
+            
+            smartty.innerHTML='';
+
+            var a = document.createElement('a');
+            a.href="javascript:document.location.reload();";
+
+            var img = document.createElement('img');
+            img.src="images/smartty-addestrategia.png";
+            a.appendChild(img);
+
+            smartty.appendChild(a);                    
+
+        }catch(e){
+            alert(e);
+        }
+
+
+
+    }
+    
+    function responder(resposta){
+
+        try{
+            
+            var messages = document.getElementById("chatbuzz-messages");
+
+            var div_message = document.createElement('div');
+            div_message.className='message';
+
+            if (resposta != "investir"){
+                var img_autor = document.createElement('img');
+                img_autor.src="images/chatbuzz.png";
+                img_autor.alt="Smartty";
+
+                var div_autor = document.createElement('div');
+                div_autor.appendChild(img_autor);
+
+                var div_message_1 = document.createElement('div');
+                div_message_1.style="padding-left:12px";
+
+                var p_autor = document.createElement('p');
+                p_autor.className='autor';
+                p_autor.appendChild(document.createTextNode('Smartty'));
+
+                var p_resposta = document.createElement('p');
+                p_resposta.className='resposta';
+                
+                p_resposta.appendChild(document.createTextNode(resposta));
+
+                div_message_1.appendChild(p_autor);
+                div_message_1.appendChild(p_resposta);
+
+                div_message.appendChild(div_autor);
+
+                div_message.appendChild(div_message_1);
+
+            }else{
+
+                var div_container = document.createElement('div');
+                div_container.style="display:flex;flex-direction: row;padding:26px;";
+
+                var div_box_white = document.createElement('div');
+                div_box_white.className = "box-white";
+                div_box_white.style = "border:none;max-height: 300px;";
+
+                var p_titulo = document.createElement('p');
+                var span_titulo = document.createElement('span');
+                p_titulo.appendChild(document.createTextNode('Pontos Pivot'));
+                span_titulo.appendChild(document.createTextNode('★★★'));
+
+                p_titulo.appendChild(span_titulo);
+
+                div_box_white.appendChild(p_titulo);
+
+                var ul_card = document.createElement('ul');
+                var li_ul_1 = document.createElement('li');
+                var span_li_ul_1 = document.createElement('span');
+                span_li_ul_1.appendChild(document.createTextNode('Papeis:'));
+                li_ul_1.appendChild(span_li_ul_1);
+                li_ul_1.appendChild(document.createTextNode('Mini Indice e Mini Dolar'));
+
+                var li_ul_2 = document.createElement('li');
+                var span_li_ul_2 = document.createElement('span');
+                span_li_ul_2.appendChild(document.createTextNode('Tempo da Operacao:'));
+                li_ul_2.appendChild(span_li_ul_2);
+                li_ul_2.appendChild(document.createTextNode('Day Trade'));
+
+                var li_ul_3 = document.createElement('li');
+                var span_li_ul_3 = document.createElement('span');
+                span_li_ul_3.appendChild(document.createTextNode('Frequencia da Operacao:'));
+                li_ul_3.appendChild(span_li_ul_3);
+                li_ul_3.appendChild(document.createTextNode('Variado'));
+                
+                var li_ul_4 = document.createElement('li');
+                var span_li_ul_4 = document.createElement('span');
+                span_li_ul_4.appendChild(document.createTextNode('Autor:'));
+                li_ul_4.appendChild(span_li_ul_4);
+                li_ul_4.appendChild(document.createTextNode('SmarttBot'));
+
+                ul_card.appendChild(li_ul_1);
+                ul_card.appendChild(li_ul_2);
+                ul_card.appendChild(li_ul_3);
+                ul_card.appendChild(li_ul_4);
+                
+                div_box_white.appendChild(ul_card);
+
+                var br_li = document.createElement('br');
+
+                div_box_white.appendChild(br_li);
+                
+                var p_valor = document.createElement('p');
+                p_valor.appendChild(document.createTextNode('R$ 189 / pagamento unico'));
+                p_valor.style="font-size:24px;";
+                
+                div_box_white.appendChild(p_valor);
+
+                var p_btn_add = document.createElement('button');
+                p_btn_add.className = "btn-smartty-addestrategia";
+                p_btn_add.setAttribute("onclick","javascript:addEstrategia();");
+                p_btn_add.appendChild(document.createTextNode('Add estrategia'));
+
+
+                var p_add = document.createElement('p');
+                p_add.style="text-align:center;";
+                p_add.appendChild(p_btn_add);
+                
+                div_box_white.appendChild(p_add);
+
+                div_container.appendChild(div_box_white);
+
+                div_message.appendChild(div_container);
+
+                document.getElementById('smartty-title').innerHtml = "Sua melhor estrategia";
+                
+                var smartyTitleIco = document.createElement('img');
+                smartyTitleIco.src="images/icon-user-example.png";
+                smartyTitleIco.alt="Autor";
+
+                
+           //     document.getElementById('smartty-title').appendChild(smartyTitleIco);      
+
+
+
+                
+            }
+
+            messages.appendChild(div_message);
+            messages.scrollTop = messages.scrollHeight;
+                    
+
+
+        }catch(e){
+            alert(e);
+        }
+
+
+}
+
+
+
+</script>    
+    
+</head>
+<body>
+   
+    <div class="chatbuzz" id="smartty">
+
+        <div class="header">
+            <p><img src="images/chatbuzz-btn-back.png" alt="Voltar"  onclick="closeSmartty();" /><span id="smartty-title">Converse com o <b>Smartty</b></span></p>
+        </div>
+        <div class="messages" id="chatbuzz-messages">
+
+            <div style="display:flex;flex-direction: row;padding:26px;">
+                <div><img src="images/chatbuzz.png" alt="Smartty" /></div>
+                <div style="padding-left:12px;">
+                    <p class="autor">Smartty</p>
+                    <p class="resposta">Oi, eu sou o <b>Smartty</b>. <br />Se você quer começar a investir de forma fácil, estratégica e assertiva, veio ao lugar certo. Eu vou te ajudar nessa!</p>
+                    <p class="resposta">Quando você pensa em investimento, o qual frase vem na sua cabeça?</p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="footer" style="position: relative">
+
+                <p id="chatbuzz-interaction">
+                    <button style="width: 162px;" onclick="perguntar(this.value)" value="Credo, que delícia!">Credo, que delícia!</button>
+                    <button style="width: 162px;" onclick="perguntar(this.value)" value="Deus me dibre!">Deus me dibre!</button>
+                </p>
+
+                <img src="images/chatbuzz-footer.png" alt="Smartty" style="position: absolute;bottom:0px"/>
+
+        </div>
+
+    
+    </div>
+    <div class="flex-container">
+        <div class="header">
+            <div style="margin-left:84px;">
+                <img src="images/logo.png" />
+            </div>
+                <div>
+                    <ul style="margin-left:100px;display: inline;">
+                        <li>Como Funciona</li>
+                        <li>Planos</li>
+                        <li class="selected">Loja de Estrat&eacute;gias</li>
+                        <li>D&uacute;vidas Frequentes</li>
+                        <li>Blog</li>
+                        <li>Login</li>
+                        <li><button>Teste Gr&aacute;tis</button></li>
+                    </ul>
+                </div>
+            </div>
+        <div class="banner">
+            <div>
+            <p class="banner-title">Smartty ganha dinheiro para você e ajuda a escolher a melhor forma de fazer isso acontecer.</p>
+            <p class="banner-subtitle">Nosso chatbot conversa com você, entende o seu perfil e te ajuda a ficar rico.</p>
+            </div>
+            <div class="banner-chatbuzz">
+                <img src="images/icon-smartty.png" />
+                <br />
+                <button class="btn-chatbot" onclick="javascript:smartty();">Converse agora</button>
+            </div>
+        </div>
+        <div class="conteudo">
+
+            <div class="filtro">
+                <div>
+                <img src="images/btn-filtrar.png" style="float:left" />
+                </div>
+                <div>
+                <img src="images/btn-pesquisar.png" style="float:right" />
+                </div>
+            </div>
+
+            <div class="estrategia">
+                    <p class="titulo">Mini D&oacute;lar</p>
+                    <div class="lista-box">
+                        <div class="box-white">
+
+                            <p>Orion Discovery Trend <span>★★★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> Mini D&oacute;lar</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Autor:</span> TopBot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 197 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+
+                        </div>
+                        <div class="box-green">
+                            <p>Pontos Pivot <span>★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice e Mini D&oacute;lar</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Autor:</span> SmarttBot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 189 / pagamento &uacute;nico<span><img src="images/btn-mais.png" /></span></p>
+
+                        </div>
+                        
+                        <div class="box-white">
+
+                            <p>RenkoBot Start <span>★★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice e Mini D&oacute;lar</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Autor:</span> SmarttBot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 249 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+
+                        </div>
+                        <div class="box-green">
+                            <p>Kryon <span>★★★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> Mini D&oacute;lar</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Baixa</li>
+                                    <li><span>Autor:</span> RM Rob&ocirc;s Investidores</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 179 / pagamento &uacute;nico<span><img src="images/btn-mais.png" /></span></p>
+
+                        </div>       
+                    </div>
+            </div>
+
+            <div class="estrategia">
+                <p class="titulo">Mini &Iacute;ndice</p>
+                <div class="lista-box">
+                    <div class="box-green">
+                        <p>Pontos Pivot <span>★★★</span></p>
+
+                        <ul>
+                                <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice e Mini D&oacute;lar</li>
+                                <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                <li><span>Autor:</span> SmarttBot</li>
+                        </ul>
+                        <br />
+                        <p style="font-size:24px;">R$ 189 / pagamento &uacute;nico<span><img src="images/btn-mais.png" /></span></p>
+
+                    </div> 
+                    <div class="box-white">
+
+                        <p>RenkoBot Start <span>★★★★</span></p>
+
+                        <ul>
+                                <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice e Mini D&oacute;lar</li>
+                                <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                <li><span>Autor:</span> SmarttBot</li>
+                        </ul>
+                        <br />
+                        <p style="font-size:24px;">R$ 249 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+
+                    </div>
+                    <div class="box-green">
+                        <p>Capital Win Tracker <span>★★★★★</span></p>
+
+                        <ul>
+                                <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice</li>
+                                <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Baixa</li>
+                                <li><span>Autor:</span> educa.capital</li>
+                        </ul>
+                        <br />
+                        <p style="font-size:24px;">R$ 149 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+
+                    </div>
+                    <div class="box-white">
+
+                        <p>Gradiente Linear 1.0 WIN <span>★★★★</span></p>
+
+                        <ul>
+                                <li><span>Pap&eacute;is:</span> Mini &Iacute;ndice e Mini D&oacute;lar</li>
+                                <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                <li><span>Autor:</span> Su Choung We</li>
+                        </ul>
+                        <br />
+                        <p style="font-size:24px;">R$ 149 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+
+                    </div>       
+                </div>
+            </div>
+            <div class="estrategia">
+                    <p class="titulo">D&oacute;lar Cheio</p>
+                    <div class="lista-box">
+                        <div class="box-white">
+
+                            <p>Universe DOL <span>★★★★</span></p>
+    
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> D&oacute;lar Cheio</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Baixa</li>
+                                    <li><span>Autor:</span> Futuro J&aacute;</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 699 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>
+                        <div class="box-green">
+
+                            <p>Newbot Gold DOL 02 <span>★★★★★</span></p>
+    
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> D&oacute;lar Cheio</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Baixa</li>
+                                    <li><span>Autor:</span> Newbot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 500 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>
+                        <div class="box-white">
+
+                            <p>Newbot Gold DOL 01 <span>★★★</span></p>
+    
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> D&oacute;lar Cheio</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Alta</li>
+                                    <li><span>Autor:</span> Newbot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 249 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>
+                        
+                        <div class="box-green">
+
+                            <p>Universe 2.0 <span>★★★★★</span></p>
+    
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> Mini D&oacute;lar e D&oacute;lar Cheio</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Baixa</li>
+                                    <li><span>Autor:</span> Futuro J&aacute;</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 499 / pagamento &uacute;nico<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>  
+                    </div>
+            </div>
+
+            <div class="estrategia">
+                    <p class="titulo">BM&F / Bovespa</p>
+                    <div class="lista-box">
+                        
+                        <div class="box-green">
+
+                            <p>Tangram Bot 2 - Candlestick  <span>★★★★★</span></p>
+    
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> BM&F / Bovespa</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variada</li>
+                                    <li><span>Autor:</span> SmarttBot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">Gr&aacute;tis<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>  
+                        <div class="box-white">
+
+                            <p>Tangram Bot 2 - Heikin-Ashi  <span>★★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> BM&F / Bovespa</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variada</li>
+                                    <li><span>Autor:</span> SmarttBot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">Gr&aacute;tis<span><img src="images/btn-mais.png" /></span></p>
+    
+                        </div>
+                        <div class="box-green">
+
+                            <p>Newbot Platinum Trend 03<span>★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> BM&F / Bovespa</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> M&eacute;dia</li>
+                                    <li><span>Autor:</span> Newbot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 550 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>    
+                        </div>
+                        <div class="box-white">
+
+                            <p>Newbot Diamond  <span>★★★★★</span></p>
+
+                            <ul>
+                                    <li><span>Pap&eacute;is:</span> BM&F / Bovespa</li>
+                                    <li><span>Tempo da Opera&ccedil;&atilde;o:</span> Day Trade</li>
+                                    <li><span>Frequ&ecirc;ncia da Opera&ccedil;&atilde;o:</span> Variado</li>
+                                    <li><span>Autor:</span> Newbot</li>
+                            </ul>
+                            <br />
+                            <p style="font-size:24px;">R$ 499 / m&ecirc;s<span><img src="images/btn-mais.png" /></span></p>    
+    
+
+                        </div>        
+                    </div>
+            </div>
+
+        </div>
+        <div class="rodape">
+                <img src="images/logo-rodape.png" alt="SmarttBot" />
+                <p>
+                    Rua Antônio de Albuquerque, 156, 16o andar, Belo Horizonte <br />© Copyright 2011 - 2019 | SmarttBot | CNPJ: 13.468.064/0001-63
+                </p>
+        </div>       
+
+    </div>
+</body>
+</html>
